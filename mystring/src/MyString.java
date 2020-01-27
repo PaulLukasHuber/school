@@ -101,4 +101,28 @@ public class MyString {
             }
         }
     }
+
+    //Concat
+    public void concat (MyString s2){
+        int l1 = getLth(s2);
+        int l2 = l1 + lth;
+
+        if (l2 > 20){
+            h = new char[l2];
+            for (int i=0;i<lth-1;i++){
+                h[i] = text[i]
+            }
+            for (int i=0;i<l1-1;i++){
+                h[lth+i] = s2.charAt(i)
+            }
+            text = h;
+            lth = l2;
+        }else {
+            for (int i=0;i<l1;i++){
+                text[lth+1]=s2.charAt(i)
+            }
+            lth=l2;
+        }
+    }
+
 }
