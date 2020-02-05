@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.Objects;
 
 public class MyString {
 
@@ -103,7 +101,7 @@ public class MyString {
 
     //Concat
     public void concat (MyString s2){
-        int l1 = getLth(s2);
+        int l1 = getLth();
         int l2 = l1 + lth;
 
         if (l2 > 20){
