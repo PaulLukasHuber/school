@@ -98,7 +98,6 @@ public class MyString {
             }
         }
     }
-
     //Concat
     public void concat (MyString s2){
         int l1 = getLth();
