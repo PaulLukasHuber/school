@@ -2,7 +2,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
 
-        System.out.println(fibo(50));
+        System.out.println(fibo(51));
     }
     public static int fibo(int n){
         if (n == 0){
