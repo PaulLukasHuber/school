@@ -29,6 +29,7 @@ public class FachNote {
         note = n;
     }
 
-    //ArrayPrinter
-    // System.out.println(Arrays.toString(FELD));
+    public void drucke() {
+        //Fehlt
+    }
 }
