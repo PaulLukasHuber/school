@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class FachNote {
 
     //Attributes
@@ -7,7 +5,7 @@ public class FachNote {
     private int note;
 
     //Constructor
-    public FachNote(String f, int n){
+    public FachNote(String f, int n) {
         fach = f;
         note = n;
     }
@@ -30,6 +28,7 @@ public class FachNote {
     }
 
     public void drucke() {
-        //Fehlt
+        System.out.println("Fach: " + fach);
+        System.out.println("Note: " + note);
     }
 }
