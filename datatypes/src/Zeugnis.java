@@ -6,8 +6,6 @@ import java.util.List;
 
 public class Zeugnis {
 
-
-    //generische Klasse ArrayList; in spitzen Klammern: welhe Objeke sind in Liste erlaubt
     static List<FachNote> zensuren = new ArrayList<>(); //Kostruktoraufruf
 
     public static void main(String[] arg) {
@@ -21,11 +19,12 @@ public class Zeugnis {
         System.out.println("n:     n\u00e4chste Zensur erfassen");
         System.out.println("d:     Ausgabe aller erfassten Zensuren");
         System.out.println("b:     Durchschnittsnote berechnen");
+        System.out.println("a:     Eintrag \u00e4ndern");
+        System.out.println("l:     Eintrag l\u00f6schen");
         System.out.println("x:     Beendet das Programm");
 
         while (!close) {
-            char input = IO.readChar("Deine Wahl:");
-            switch (input) {
+            switch (IO.readChar("Deine Wahl:")) {
                 case 'n':
                     f = IO.readString("Fach: ");
                     n = IO.readInt("Note: ");
@@ -45,6 +44,27 @@ public class Zeugnis {
                     g = g / zensuren.size();
                     System.out.println("Die Durchschnittsnote lautet " + g);//
                     break;
+                case 'a':
+                    f = IO.readString("Fach: ");
+                    for (FachNote fn1 : zensuren) {
+                        if (f.equalsIgnoreCase(fn1.getFach())) {
+                            fn1.setFach(IO.readString("Neues Fach: "));
+                            fn1.setNote(IO.readInt("Neue Note: "));
+                            break;
+                        }
+                    }
+                    break;
+                case 'l':
+                    f = IO.readString("Fach: ");
+                    FachNote temp = null;
+                    for (FachNote fn1 : zensuren) {
+                        if (f.equalsIgnoreCase(fn1.getFach())) {
+                            temp = fn1;
+                            break;
+                        }
+                    }
+                    zensuren.remove(temp);
+                    break;
                 case 'x':
                     close = true;
                     break;
@@ -52,7 +72,6 @@ public class Zeugnis {
                     System.out.println("Eingabe nicht gültig!");
                     break;
             }
-
         }
     }
 
