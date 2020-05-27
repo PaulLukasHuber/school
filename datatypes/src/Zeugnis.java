@@ -21,6 +21,7 @@ public class Zeugnis {
         System.out.println("b:     Durchschnittsnote berechnen");
         System.out.println("a:     Eintrag \u00e4ndern");
         System.out.println("l:     Eintrag l\u00f6schen");
+        System.out.println("m:     Erneutes Anziegen des Men\u00f6s");
         System.out.println("x:     Beendet das Programm");
 
         while (!close) {
@@ -68,6 +69,15 @@ public class Zeugnis {
                 case 'x':
                     close = true;
                     break;
+                case 'm':
+                    System.out.println("===========MEN\u00dc===========");
+                    System.out.println("n:     n\u00e4chste Zensur erfassen");
+                    System.out.println("d:     Ausgabe aller erfassten Zensuren");
+                    System.out.println("b:     Durchschnittsnote berechnen");
+                    System.out.println("a:     Eintrag \u00e4ndern");
+                    System.out.println("l:     Eintrag l\u00f6schen");
+                    System.out.println("m:     Erneutes Anziegen des Men\u00f6s");
+                    System.out.println("x:     Beendet das Programm");
                 default:
                     System.out.println("Eingabe nicht gültig!");
                     break;
