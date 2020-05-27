@@ -34,7 +34,7 @@ public class Zeugnis {
                     break;
                 case 'd':
                     for (i = 0; i <= zensuren.size() - 1; i++) {
-                        zensuren.get(i).drucke(); //Fehlt
+                        zensuren.get(i).drucke();
                     }
                     break;
                 case 'b':
@@ -43,7 +43,7 @@ public class Zeugnis {
                         g += zensuren.get(i).getNote();
                     }
                     g = g / zensuren.size();
-                    System.out.println("Die Durchschnittsnote lautet " + g);//
+                    System.out.println("Die Durchschnittsnote lautet " + g);
                     break;
                 case 'a':
                     f = IO.readString("Fach: ");
