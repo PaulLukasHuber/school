@@ -84,26 +84,4 @@ public class Zeugnis {
             }
         }
     }
-
-
-    // ab hier m�ssen Sie den Code ersetzen (Aufgabe 20.5.20)
-    //for (i=0; i<5;i++){
-    //f = IO.readString("Fach?");
-    //n = IO.readInt("Note?");
-    //fn = new FachNote(f,n);
-    //zensuren.add(fn);
-    //}
-
-    //System.out.println(zensuren.size());
-    //System.out.println(zensuren.get(4));  //liefert nur interne Objektnummer
-    //zensuren.get(4).drucke();             //nutzt eigene Ausgabefunktion der Klasse FachNote
-
-    //zensuren.remove(2);
-    //System.out.println(zensuren.size());
-
-    //fn = new FachNote("Sport",12);
-    //zensuren.add(0,fn);
-    //System.out.println(zensuren.get(4));
-
-
 }
