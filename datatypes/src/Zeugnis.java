@@ -33,7 +33,7 @@ public class Zeugnis {
                         if (f.equalsIgnoreCase(eing.getFach())){
                         brek = true;
                             System.out.println("Dieses Fach wurde bereits eingetragen!");
-                            System.out.println("Wenn du dies ändern möchtest wähle Option a!");
+                            System.out.println("Wenn du dies \u00e4ndern möchtest w\u00e4hle Option a!");
                     }}
                     while (!brek) {
                         n = IO.readInt("Note: ");
@@ -41,6 +41,7 @@ public class Zeugnis {
                         zensuren.add(fn);
                         brek = true;
                     }
+                    brek = false;
                     break;
                 case 'd':
                     for (i = 0; i <= zensuren.size() - 1; i++) {
