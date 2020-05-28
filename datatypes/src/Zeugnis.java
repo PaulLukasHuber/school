@@ -1,18 +1,19 @@
 import AlgoTools.IO;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLOutput;
+import java.util.LinkedList;
 
 
 public class Zeugnis {
 
-    static List<FachNote> zensuren = new ArrayList<>(); //Kostruktoraufruf
+    static LinkedList<FachNote> zensuren = new LinkedList<>();
 
     public static void main(String[] arg) {
         int i, n;
         String f;
         FachNote fn;
         boolean close = false;
+        boolean brek = false;
 
         //Menue
         System.out.println("===========MEN\u00dc===========");
@@ -21,16 +22,25 @@ public class Zeugnis {
         System.out.println("b:     Durchschnittsnote berechnen");
         System.out.println("a:     Eintrag \u00e4ndern");
         System.out.println("l:     Eintrag l\u00f6schen");
-        System.out.println("m:     Erneutes Anziegen des Men\u00f6s");
+        System.out.println("m:     Erneutes Anziegen des Men\u00fcs");
         System.out.println("x:     Beendet das Programm");
 
         while (!close) {
             switch (IO.readChar("Deine Wahl:")) {
                 case 'n':
                     f = IO.readString("Fach: ");
-                    n = IO.readInt("Note: ");
-                    fn = new FachNote(f, n);
-                    zensuren.add(fn);
+                    for (FachNote eing:zensuren) {
+                        if (f.equalsIgnoreCase(eing.getFach())){
+                        brek = true;
+                            System.out.println("Dieses Fach wurde bereits eingetragen!");
+                            System.out.println("Wenn du dies ändern möchtest wähle Option a!");
+                    }}
+                    while (!brek) {
+                        n = IO.readInt("Note: ");
+                        fn = new FachNote(f, n);
+                        zensuren.add(fn);
+                        brek = true;
+                    }
                     break;
                 case 'd':
                     for (i = 0; i <= zensuren.size() - 1; i++) {
@@ -76,8 +86,9 @@ public class Zeugnis {
                     System.out.println("b:     Durchschnittsnote berechnen");
                     System.out.println("a:     Eintrag \u00e4ndern");
                     System.out.println("l:     Eintrag l\u00f6schen");
-                    System.out.println("m:     Erneutes Anziegen des Men\u00f6s");
+                    System.out.println("m:     Erneutes Anzeigen des Men\u00fcs");
                     System.out.println("x:     Beendet das Programm");
+                    break;
                 default:
                     System.out.println("Eingabe nicht gültig!");
                     break;
