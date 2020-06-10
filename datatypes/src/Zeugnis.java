@@ -1,6 +1,5 @@
 import AlgoTools.IO;
 
-import java.sql.SQLOutput;
 import java.util.LinkedList;
 
 
@@ -13,7 +12,7 @@ public class Zeugnis {
         String f;
         FachNote fn;
         boolean close = false;
-        boolean brek = false;
+        boolean check = false;
 
         //Menue
         System.out.println("===========MEN\u00dc===========");
@@ -29,19 +28,20 @@ public class Zeugnis {
             switch (IO.readChar("Deine Wahl:")) {
                 case 'n':
                     f = IO.readString("Fach: ");
-                    for (FachNote eing:zensuren) {
-                        if (f.equalsIgnoreCase(eing.getFach())){
-                        brek = true;
+                    for (FachNote eing : zensuren) {
+                        if (f.equalsIgnoreCase(eing.getFach())) {
+                            check = true;
                             System.out.println("Dieses Fach wurde bereits eingetragen!");
                             System.out.println("Wenn du dies \u00e4ndern möchtest w\u00e4hle Option a!");
-                    }}
-                    while (!brek) {
+                        }
+                    }
+                    while (!check) {
                         n = IO.readInt("Note: ");
                         fn = new FachNote(f, n);
                         zensuren.add(fn);
-                        brek = true;
+                        check = true;
                     }
-                    brek = false;
+                    check = false;
                     break;
                 case 'd':
                     for (i = 0; i <= zensuren.size() - 1; i++) {
@@ -97,3 +97,18 @@ public class Zeugnis {
         }
     }
 }
+
+//School explanations for Add
+//LinkedList Add (Element)
+//  add:
+//      lauf=kopf;
+//      while(lauf.getNext()!=NULL){
+//      lauf=lauf.getNext();
+//  }
+//      lauf.setNext(neu)
+
+//LinkedList Add (Index,Element)
+//  add(2,neu)
+//      laufe mit lauf bis Element 1    (1. Schritt)
+//      neu.setNext(lauf.getNext());    (2. Schritt)
+//      lauf.setNext(neu);              (3. Schritt)
