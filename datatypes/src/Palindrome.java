@@ -3,18 +3,20 @@ import java.util.Stack;
 
 public class Palindrome {
 
-    //String
-    private static String normal;
-
     public static void main(String[] args) {
 
         //Scanner
         Scanner input = new Scanner(System.in);
+        String normal;
 
         //User Input
         System.out.println("Enter the Object that should be tested.");
         System.out.println("Here: ");
-        normal = input.next();
+        normal = input.nextLine();
+
+        normal = normal.toLowerCase();
+        normal = normal.replaceAll("\\s+", "");
+        System.out.println(normal);
 
         if (PalindromeTester(normal)) {
             System.out.println("Your Object is a Palindrome!");
