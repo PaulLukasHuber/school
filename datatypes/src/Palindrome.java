@@ -16,7 +16,6 @@ public class Palindrome {
 
         normal = normal.toLowerCase();
         normal = normal.replaceAll("\\s+", "");
-        System.out.println(normal);
 
         if (PalindromeTester(normal)) {
             System.out.println("Your Object is a Palindrome!");
