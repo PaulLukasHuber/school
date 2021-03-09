@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/algorithms/algorithms.iml" filepath="$PROJECT_DIR$/algorithms/algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/datatypes/datatypes.iml" filepath="$PROJECT_DIR$/datatypes/datatypes.iml" />
       <module fileurl="file://$PROJECT_DIR$/machines/machines.iml" filepath="$PROJECT_DIR$/machines/machines.iml" />
       <module fileurl="file://$PROJECT_DIR$/mystring/mystring.iml" filepath="$PROJECT_DIR$/mystring/mystring.iml" />
       <module fileurl="file://$PROJECT_DIR$/recursion/recursion.iml" filepath="$PROJECT_DIR$/recursion/recursion.iml" />
     </modules>
   </component>
-</project> 
+</project>
