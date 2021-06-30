@@ -1,7 +1,7 @@
 public class MeineVListe {
 
-    private final ListElem kopf;
-    private final int laenge;
+    private ListElem kopf;
+    private int laenge;
 
     public MeineVListe(Object i) {
         kopf = new ListElem(i);
@@ -14,7 +14,21 @@ public class MeineVListe {
     }
 
     public void append(Object i) {
-        new ListElem(i);
+
+        ListElem neu = new ListElem(i);
+
+        if (laenge == 0) {
+            kopf = neu;
+        } else {
+            ListElem hilf = kopf;
+            for (int z = 0; z < laenge - 1; z++) {
+                hilf = hilf.getNext();
+            }
+            hilf.setNext(neu);
+
+        }
+        laenge = laenge + 1;
+        return;
     }
 
     public boolean delete(int pos) {
@@ -24,6 +38,9 @@ public class MeineVListe {
         if (laenge < pos - 1) {
             return false;
         } else {
+
+            if (pos == 0) kopf = kopf.getNext();
+            
             for (int i = 1; i < pos - 1; i++) {
                 hilf1 = hilf1.getNext();
                 hilf2 = hilf2.getNext();
@@ -31,11 +48,12 @@ public class MeineVListe {
             hilf1 = hilf1.getNext();
             hilf2.setNext(hilf1.getNext());
         }
+        laenge = laenge - 1;
         return true;
     }
 
     public boolean setItem(int pos, Object inhalt) {
-        ListElem hilf = null;
+        ListElem hilf = kopf;
         if (laenge < pos - 1) {
             return false;
         } else {
@@ -48,19 +66,38 @@ public class MeineVListe {
     }
 
     public Object getItem(int pos) {
-        ListElem hilf = null;
+        ListElem hilf = kopf;
         if (laenge < pos - 1) {
             return null;
         } else {
-            for (int i = 1; i < pos; i++) {
+            for (int i = 0; i < pos; i++) {
                 hilf = hilf.getNext();
             }
             return hilf.getInhalt();
         }
     }
 
-    public void insertAt(int pos, Object i) {
+    public boolean insertAt(int pos, Object i) {
 
+        ListElem hilf = kopf;
+        ListElem neu = new ListElem(i);
+
+        if (laenge <= pos) {
+            return false;
+        } else {
+            if (pos == 0) {
+                neu.setNext(kopf);
+                kopf = neu;
+            } else {
+                for (int z = 0; z < pos - 1; z++) {
+                    hilf = hilf.getNext();
+                }
+                neu.setNext(hilf.getNext());
+                hilf.setNext(neu);
+            }
+        }
+        laenge = laenge + 1;
+        return true;
     }
 
     public boolean isEmpty() {
@@ -69,7 +106,7 @@ public class MeineVListe {
 
     public int getLength() {
         return laenge;
-        /**
+        /*
          ListElem hilf;
          int anzahl = 0;
 
@@ -84,5 +121,20 @@ public class MeineVListe {
          anzahl = anzahl + 1;
          return anzahl;
          */
+    }
+
+    public void drucke() {
+
+        ListElem lauf;
+        lauf = kopf;
+
+        if (lauf == null) {
+            System.out.println("Liste ist leer");
+        } else {
+            while (lauf != null) {
+                System.out.println(lauf.getInhalt());
+                lauf = lauf.getNext();
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ public class BinSearch {
         Scanner input = new Scanner(System.in);
 
         //Array
-        int feld[] = new int[10];
+        int[] feld = new int[10];
 
         //Array Input
         System.out.println("Geben Sie die Listenelemente Sortiert ein!");
